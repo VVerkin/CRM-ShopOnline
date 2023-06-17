@@ -13,7 +13,8 @@
 
 <body>
 
-  <section class="modal">     
+  <section class="modal"> 
+    
     <button type="button" class="modal__btn-close"></button>
     <div class="modal__title">Добавить товар</div>
     <div class="container">
@@ -67,8 +68,8 @@
                 <div class="modal__form-file-info">Изображение не должно превышать размер 1 Мб</div>
                 
                 <div class="modal__form-file-wrapper">
-                  <label for="file" class="modal__form-file-label">
-                    <input class="modal__form-file-input" form="modal-form" type="file" accept="image/*" id="file">Добавить изображение
+                  <label class="modal__form-file-label">
+                    <input class="modal__form-file-input" form="modal-form" type="file" accept="image/*">Добавить изображение
                   </label>
                 </div>
 
@@ -78,13 +79,10 @@
         </form>
 
         <div class="modal__goods">
-
           <div class="modal__goods-cost">
-
             <div class="modal__goods-text">
               Итоговая стоимость:
             </div>
-
             <div class="modal__goods-value">
               $ 900.00
             </div>
@@ -94,8 +92,16 @@
         
         </div>
 
-        
+        <div class="modal__error">
+          <button type="button" class="modal__error-btn-close"></button>
+          <div class="modal__error-message">
+            <img class="modal__error-img" src="./src/img/img/Error.svg" alt="">
+            <div class="modal__error-text">Что-то пошло не так</div>
+          </div>
+        </div>
+
       </div>
   </section>
+  <div class="modal-overlay" id="modal-overlay"></div>
 </body>
 </html>

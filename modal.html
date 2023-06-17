@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./src/img/favicon/Shop_Online_favicon.png">
+  <link rel="stylesheet" href="./src/css/index.css">
+  <link rel="preload" href="./src/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./src/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <title>CRM-ShopOnline</title>
+</head>
+
+<body>
+
+  <section class="modal">     
+    <button type="button" class="modal__btn-close"></button>
+
+    <div class="container">
+
+        <h1 class="modal__title">Добавить товар</h1>
+        
+        <form class="modal__form" id="modal-form" action="https://jsonplaceholder.typicode.com/posts"
+            method="post"
+            target="_blank">
+            
+          <fieldset class="modal__form-fieldset">
+
+            <div class="modal__form-wrapper">
+
+
+              <div class="modal__form-name">
+                <label for="name" class="modal__form-label">Наименование</label>
+                <input class="modal__form-input" type="text" name="name" id="name">
+              </div>
+
+              <div class="modal__form-description">
+                <label for="description" class="modal__form-label">Описание</label>
+                <textarea class="modal__form-textarea" name="description" id="description"></textarea>
+              </div>
+
+              <div class="modal__form-category">
+                <label for="category" class="modal__form-label">Категория</label>
+                <input class="modal__form-input" type="text" name="category" id="category">
+              </div>
+
+              <div class="modal__form-units">
+                <label for="units" class="modal__form-label">Единицы измерения</label>
+                <input class="modal__form-input" type="text" name="units" id="units">
+              </div>
+
+              <div class="modal__form-count">
+                <label for="count" class="modal__form-label">Количество</label>
+                <input class="modal__form-input" type="number" name="count" id="count">
+              </div>
+              
+              <div class="modal__form-discount">
+                <label for="add-discount" class="modal__form-checkbox">Дисконт</label>
+                <input class="modal__form-checkbox-input" type="checkbox" name="discount" aria-label="Получить скидку">
+                <input class="modal__form-input-small" type="text" name="discount-text" id="add-discount" disabled>
+              </div>
+
+              <div class="modal__form-price">
+                <label for="price" class="modal__form-label">Цена</label>
+                <input class="modal__form-input" type="number" name="price" id="price">
+              </div>
+
+              <!-- <div class="modal__form-add-img"> -->
+                <div class="modal__form-add-img-info">Изображение не должно превышать размер 1 Мб</div>
+                <button class="modal__form-add-img-btn" form="modal-form" type="submit">Добавить изображение</button>
+              </div>
+            <!-- </div> -->
+          </fieldset>
+        </form>
+        <button class="modal__btn-add-goods" form="modal-form" type="submit">Добавить товар</button>
+      </div>
+  </section>
+</body>
+</html>

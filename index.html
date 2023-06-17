@@ -15,11 +15,9 @@
 
   <section class="modal">     
     <button type="button" class="modal__btn-close"></button>
-
+    <div class="modal__title">Добавить товар</div>
     <div class="container">
 
-        <h1 class="modal__title">Добавить товар</h1>
-        
         <form class="modal__form" id="modal-form" action="https://jsonplaceholder.typicode.com/posts"
             method="post"
             target="_blank">
@@ -66,13 +64,37 @@
               </div>
 
               <!-- <div class="modal__form-add-img"> -->
-                <div class="modal__form-add-img-info">Изображение не должно превышать размер 1 Мб</div>
-                <button class="modal__form-add-img-btn" form="modal-form" type="submit">Добавить изображение</button>
+                <div class="modal__form-file-info">Изображение не должно превышать размер 1 Мб</div>
+                
+                <div class="modal__form-file-wrapper">
+                  <label for="file" class="modal__form-file-label">
+                    <input class="modal__form-file-input" form="modal-form" type="file" accept="image/*" id="file">Добавить изображение
+                  </label>
+                </div>
+
               </div>
             <!-- </div> -->
           </fieldset>
         </form>
-        <button class="modal__btn-add-goods" form="modal-form" type="submit">Добавить товар</button>
+
+        <div class="modal__goods">
+
+          <div class="modal__goods-cost">
+
+            <div class="modal__goods-text">
+              Итоговая стоимость:
+            </div>
+
+            <div class="modal__goods-value">
+              $ 900.00
+            </div>
+          </div>
+
+          <button class="modal__btn-add-goods" form="modal-form" type="submit">Добавить товар</button>
+        
+        </div>
+
+        
       </div>
   </section>
 </body>

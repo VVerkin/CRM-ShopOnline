@@ -30,8 +30,10 @@
   <body>
     <section class="modal">
       <button type="button" class="modal__btn-close"></button>
-      <div class="modal__title">Добавить товар</div>
-      <div class="container">
+      <div class="container modal__container">
+        <div class="modal__header">
+          <div class="modal__title">Добавить товар</div>
+        </div>
         <form
           class="modal__form"
           id="modal-form"
@@ -40,7 +42,7 @@
           target="_blank"
         >
           <fieldset class="modal__form-fieldset">
-            <div class="modal__form-wrapper">
+            <div class="modal__form-container">
               <div class="modal__form-name">
                 <label for="name" class="modal__form-label">Наименование</label>
                 <input

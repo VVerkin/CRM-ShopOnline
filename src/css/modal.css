@@ -10,15 +10,27 @@
 .modal__btn-close {
   display: block;
   position: absolute;
+  text-align: center;
   width: 20px;
   height: 20px;
   top: 20px;
-  right: 31px;
+  right: 30px;
   border: none;
-  background-image: url('../img/icons/close.svg');  
+  background-image: url("../img/icons/close.svg");
   background-color: var(--smoky-white-color);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.modal__container {
+  max-width: 580px;
+  /* padding: 0 76px; */
+}
+
+.modal__header {
+  padding: 12px 0 21px;
+  border-bottom: 1px solid var(--light-purple-gray-color);
+  margin-bottom: 22px;
 }
 
 .modal__title {
@@ -26,34 +38,31 @@
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.1em;
-  padding: 12px 0 21px;
-  border-bottom: 1px solid var(--light-purple-gray-color);
-  margin-bottom: 22px; 
 }
 
 .modal__form {
   max-width: 580px;
   min-height: 403px;
   background: var(--white-color);
-  border:none;
+  border: none;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 28px;
   margin-bottom: 28px;
 }
 
-.modal__form-wrapper {
+.modal__form-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 60px);
   gap: 12px 24px;
 
-  grid-template-areas: 
-  "name description"
-  "category description"
-  "units count"
-  "discount price"
-  "file-info file";
+  grid-template-areas:
+    "name description"
+    "category description"
+    "units count"
+    "discount price"
+    "file-info file";
 }
 
 .modal__form-name {
@@ -115,7 +124,7 @@
   border: none;
   border-radius: 6px;
   background: var(--smoky-white-color);
-  resize:none;
+  resize: none;
   padding: 5px 10px;
 }
 
@@ -138,7 +147,7 @@
 }
 
 .modal__form-checkbox-input:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -154,7 +163,7 @@
 }
 
 .modal__form-checkbox-input:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 12px;
   left: 10px;
@@ -197,7 +206,7 @@
 /* Ограничение загрузки изображения */
 
 .modal__form-file-info {
-  display: none;
+  /* display: none; */
   padding-top: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -215,30 +224,31 @@
 /* Стилизация поля загрузки изображения */
 
 .modal__form-file-label {
-	display: inline-block;
-	cursor: pointer;
-	outline: none;
-	font-weight: 600;
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-	color: var(--white-color);
-	border-radius: 6px;
-	background-color: var(--purple-blue-color);
+  color: var(--white-color);
+  border-radius: 6px;
+  background-color: var(--purple-blue-color);
   vertical-align: middle;
   text-align: center;
   padding: 11px 28px;
   padding-left: 28px;
-	border: none;
+  border: none;
   height: 39px;
 }
 
 .modal__form-file-input {
   position: absolute;
-	z-index: -1;
-	opacity: 0;
-	display: block;
-	width: 0;
-	height: 0;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
 }
 
 .modal__btn-add-goods {
@@ -259,6 +269,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 28px;
+  gap: 10px;
 }
 
 .modal__goods-cost {
@@ -270,31 +281,31 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  text-transform:none;
+  text-transform: none;
 }
 
 .modal__goods-value {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  color: var(--purple-blue-color)
+  color: var(--purple-blue-color);
 }
 
 .modal-overlay {
-  display: none;
+  /* display: none; */
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* сообщение об ошибке */
 
 .modal__error {
-  display: none;
+  /* display: none; */
   width: 350px;
   height: 350px;
 
@@ -315,19 +326,19 @@
   top: 24px;
   right: 29px;
   border: none;
-  background-image: url('../img/icons/close.svg');  
+  background-image: url("../img/icons/close.svg");
   background-color: var(--smoky-white-color);
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .modal__error-message {
-  padding: 106px 0 96px;
+  padding-top: 106px;
 }
 
 .modal__error-img {
-  padding-left: 128px;
-  margin-bottom: 29px;
+  display: block;
+  margin: 0 auto 29px;
 }
 
 .modal__error-text {
@@ -338,9 +349,139 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .modal__container {
+    padding: 0 20px;
+  }
 
+  .modal__form-container {
+    grid-template-rows: repeat(9, 60px);
+    gap: 12px 10px;
 
+    grid-template-areas:
+      "name name"
+      "category category"
+      "description description"
+      "description description"
+      "units units"
+      "count count"
+      "price price"
+      "discount discount"
+      "file-info file";
+  }
 
+  .modal__form-file-label {
+    font-size: 13px;
+    padding: 11px 10px;
+  }
 
+  .modal__form-file-info {
+    font-size: 12px;
+  }
+}
 
+@media (max-width: 596px) {
+  .modal {
+    padding: 20px 20px 39px;
+  }
 
+  .modal__container {
+    padding: 0 10px;
+  }
+
+  .modal__header {
+    padding: 12px 0;
+    margin-bottom: 18px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    line-height: 29px;
+  }
+
+  .modal__form {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .modal__form-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 60px);
+    gap: 12px;
+
+    grid-template-areas:
+      "name"
+      "category"
+      "description"
+      "description"
+      "units"
+      "count"
+      "price"
+      "discount"
+      "file"
+      "file-info";
+  }
+
+  .modal__form-file-label {
+    font-size: 10px;
+    padding: 11px 5px;
+  }
+
+  .modal__form-label,
+  .modal__form-checkbox {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .modal__form-file-info {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .modal__btn-add-goods {
+    font-size: 14px;
+  }
+
+  .modal__goods {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .modal__goods-text {
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: none;
+  }
+
+  .modal__goods-value {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--purple-blue-color);
+  }
+
+  .modal__error {
+    /* display: none; */
+    width: 280px;
+    height: 280px;
+  }
+
+  .modal__error-btn-close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .modal__error-message {
+    padding-top: 100px;
+  }
+
+  .modal__error-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .modal__error-text {
+    font-size: 14px;
+  }
+}

@@ -1,6 +1,128 @@
-.crm {
+.cms {
   position: relative;
   max-width: 1300px;
   min-height: 1008px;
   margin: 0 auto;
+  padding: 79px 100px 110px;
+}
+
+.cms__container {
+  max-width: 1100px;
+  min-height: 762px;
+}
+
+.cms__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 7px;
+  border-bottom: 1px solid var(--light-purple-gray-color);
+  margin-bottom: 20px;
+}
+
+.cms__header-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--purple-grey-color);
+}
+
+.cms__header-result {
+  display: flex;
+  align-items: end;
+}
+
+.cms__result-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: none;
+  padding-bottom: 2px;
+  margin-right: 2px;
+
+  color: var(--purple-grey-color);
+}
+
+.cms__result-value {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--purple-blue-color);
+}
+
+.cms__subheader {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: var(--white-color);
+}
+
+.cms__subheader-setting {
+  display: flex;
+  gap: 20px;
+}
+
+/* Кнопка "Фильтр" */
+
+.cms__subheader-filter {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  width: 108px;
+  height: 40px;
+  padding: 10px;
+  background-color: var(--white-color);
+  border: 1px solid var(--light-purple-gray-color);
+  border-radius: 6px;
+}
+
+.cms__subheader-filter-img {
+  width: 20px;
+  height: 20px;
+}
+
+.cms__subheader-filter-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--cobalt-blue-color);
+}
+
+/* Строка поиска */
+
+.cms__subheader-search {
+  display: flex;
+  position: relative;
+  width: 392px;
+  height: 40px;
+}
+
+.cms__subheader-search-input {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--magnolia-color);
+  padding: 13px 0 12px 40px;
+}
+
+.cms__subheader-search-btn {
+  position: absolute;
+  left: 2px;
+  top: 3px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: var(--magnolia-color);
+  border-radius: 6px;
+  outline-offset: 2px;
+}
+
+.cms__subheader-search-icon {
+  width: 20px;
+  height: 20px;
 }

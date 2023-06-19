@@ -28,7 +28,55 @@
   </head>
 
   <body>
-    <!-- <section class="crm"></section> -->
+    <section class="cms">
+      <div class="container cms__container">
+        <div class="cms__header">
+          <div class="cms__header-title">cms</div>
+          <div class="cms__header-result">
+            <div class="cms__result-text">Итоговая стоимость:</div>
+            <div class="cms__result-value">$900.00</div>
+          </div>
+        </div>
+        <div class="cms__wrapper">
+          <div class="cms__subheader">
+            <div class="cms__subheader-setting">
+              <button class="cms__subheader-filter">
+                <img src="./src/img/icons/filter.svg" alt="Иконка фильтра" />
+                <div class="cms__subheader-filter-text">Фильтр</div>
+              </button>
+              <div class="cms__subheader-search">
+                <button
+                  class="cms__subheader-search-btn"
+                  id="search-btn"
+                  name="search-btn"
+                  type="search"
+                >
+                  <img
+                    class="cms__subheader-search-icon"
+                    src="./src/img/icons/search.svg"
+                    alt="Лупа"
+                  />
+                </button>
+
+                <input
+                  class="cms__subheader-search-input"
+                  type="search"
+                  name="search"
+                  placeholder="Поиск по наименованию и категории"
+                />
+              </div>
+            </div>
+            <button
+              class="cms__subheader-add-goods"
+              form="modal-form"
+              type="submit"
+            >
+              Добавить товар
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="modal">
       <button type="button" class="modal__btn-close"></button>

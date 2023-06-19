@@ -14,6 +14,7 @@
 .cms__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px 7px;
   border-bottom: 1px solid var(--light-purple-gray-color);
   margin-bottom: 20px;
@@ -23,16 +24,16 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
-
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
   color: var(--purple-grey-color);
 }
 
 .cms__header-result {
   display: flex;
   align-items: end;
+  max-width: 230px;
+  height: 22px;
 }
 
 .cms__result-text {
@@ -40,9 +41,7 @@
   font-size: 14px;
   line-height: 17px;
   text-transform: none;
-  padding-bottom: 2px;
-  margin-right: 2px;
-
+  margin-right: 3px;
   color: var(--purple-grey-color);
 }
 
@@ -60,10 +59,12 @@
   width: 100%;
   height: 70px;
   background-color: var(--white-color);
+  gap: 20px;
 }
 
 .cms__subheader-setting {
   display: flex;
+  flex-basis: 520px;
   gap: 20px;
 }
 
@@ -98,7 +99,7 @@
 .cms__subheader-search {
   display: flex;
   position: relative;
-  width: 392px;
+  flex-basis: 392px;
   height: 40px;
 }
 
@@ -108,6 +109,10 @@
   border-radius: 6px;
   background-color: var(--magnolia-color);
   padding: 13px 0 12px 40px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .cms__subheader-search-btn {
@@ -125,4 +130,18 @@
 .cms__subheader-search-icon {
   width: 20px;
   height: 20px;
+}
+
+.cms__subheader-add-goods {
+  width: 181px;
+  height: 39px;
+  color: var(--white-color);
+  background: var(--purple-blue-color);
+  border: none;
+  border-radius: 6px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
 }

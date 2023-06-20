@@ -40,8 +40,10 @@
         <div class="cms__wrapper">
           <div class="cms__subheader">
             <div class="cms__subheader-setting">
-              <button class="cms__subheader-filter">
-                <img src="./src/img/icons/filter.svg" alt="Иконка фильтра" />
+              <button class="cms__subheader-filter-btn">
+                <div class="cms__subheader-filter-img">
+                  <img src="./src/img/icons/filter.svg" alt="Иконка фильтра" />
+                </div>
                 <div class="cms__subheader-filter-text">Фильтр</div>
               </button>
               <div class="cms__subheader-search">
@@ -69,6 +71,43 @@
             <button class="cms__subheader-add-goods" type="submit">
               Добавить товар
             </button>
+          </div>
+          <div class="cms__table-wrapper">
+            <table class="cms__table">
+              <thead class="cms__table-head">
+                <tr class="cms__table-raw">
+                  <th class="cms__table-head-raw">ID</th>
+                  <th class="cms__table-head-raw">Наименование</th>
+                  <th class="cms__table-head-raw">Категория</th>
+                  <th class="cms__table-head-raw">ед/изм</th>
+                  <th class="cms__table-head-raw">количество</th>
+                  <th class="cms__table-head-raw">цена</th>
+                  <th class="cms__table-head-raw">ИТОГ</th>
+                  <th class="cms__table-head-raw"></th>
+                  <th class="cms__table-head-raw"></th>
+                  <th class="cms__table-head-raw"></th>
+                </tr>
+              </thead>
+              <tbody class="cms__table-body">
+                <tr class="cms__table-raw">
+                  <td>246016548</td>
+                  <td>Навигационная система Soundmax</td>
+                  <td>Техника для дома</td>
+                  <td>шт</td>
+                  <td>5</td>
+                  <td>$100</td>
+                  <td>$500</td>
+                  <td><button>1</button></td>
+                  <td><button>2</button></td>
+                  <td><button>3</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="cms__table-raw">
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
       </div>

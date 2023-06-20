@@ -125,10 +125,10 @@
 
 .cms__subheader-search-btn {
   position: absolute;
-  left: 2px;
+  left: 3px;
   top: 3px;
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
   border: none;
   background-color: var(--magnolia-color);
   border-radius: 6px;
@@ -168,7 +168,17 @@
 .cms__table-head {
   height: 45px;
   background-color: var(--magnolia-color);
-  border: 2px solid #f56433;
+  border-top: 1px solid var(--light-grey-color);
+  border-bottom: 1px solid var(--light-grey-color);
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--purple-gray-color);
 }
 
 .cms__table-raw:not(:last-child) {

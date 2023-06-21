@@ -4,7 +4,7 @@
   max-width: 1300px;
   min-height: 1008px;
   margin: 0 auto;
-  padding: 79px 100px 110px;
+  padding: 79px 0px 110px;
 }
 
 .cms__container {
@@ -163,6 +163,7 @@
 .cms__table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 15px 0;
 }
 
 .cms__table-head {
@@ -181,11 +182,79 @@
   color: var(--purple-gray-color);
 }
 
-.cms__table-raw:not(:last-child) {
+.cms__table-head-id {
+  width: 93px;
+  padding-left: 15px;
+  text-align: start;
 }
 
-.cms__table-head-raw {
-  border: 0;
-  padding: 15px;
+.cms__table-head-name {
+  width: 305px;
+  padding-left: 15px;
   text-align: start;
+}
+
+.cms__table-head-category {
+  width: 187px;
+  padding-left: 14px;
+  text-align: start;
+}
+
+.cms__table-head-units {
+  width: 55px;
+  text-align: center;
+}
+
+.cms__table-head-count {
+  width: 121px;
+  text-align: center;
+}
+
+.cms__table-head-price {
+  width: 80px;
+  text-align: end;
+}
+
+.cms__table-head-result {
+  width: 95px;
+  text-align: end;
+}
+
+td {
+  height: 62px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: start;
+  color: var(--cobalt-blue-color);
+  border-bottom: 1px solid var(--light-grey-color);
+  text-transform: none;
+}
+
+.cms__table-id,
+.cms__table-name,
+.cms__table-category {
+  padding-left: 14px;
+}
+
+.cms__table-units,
+.cms__table-count {
+  text-align: center;
+}
+
+.cms__table-price,
+.cms__table-result {
+  text-align: end;
+}
+
+.cms__table-bt-no-image {
+  padding-top: 6px;
+  padding-left: 50px;
+}
+
+.cms__table-btn-icon {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: var(--white-color);
 }

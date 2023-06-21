@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="src/css/index.css" />
     <link
       rel="preload"
+      href="src/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="src/fonts/Inter-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
       href="src/fonts/Inter-SemiBold.woff2"
       as="font"
       type="font/woff2"
@@ -75,35 +89,71 @@
           <div class="cms__table-wrapper">
             <table class="cms__table">
               <thead class="cms__table-head">
-                <tr class="cms__table-raw">
-                  <th class="cms__table-head-raw">ID</th>
-                  <th class="cms__table-head-raw">Наименование</th>
-                  <th class="cms__table-head-raw">Категория</th>
-                  <th class="cms__table-head-raw">ед/изм</th>
-                  <th class="cms__table-head-raw">количество</th>
-                  <th class="cms__table-head-raw">цена</th>
-                  <th class="cms__table-head-raw">ИТОГ</th>
-                  <th class="cms__table-head-raw"></th>
-                  <th class="cms__table-head-raw"></th>
-                  <th class="cms__table-head-raw"></th>
+                <tr>
+                  <th class="cms__table-head-id">ID</th>
+                  <th class="cms__table-head-name">Наименование</th>
+                  <th class="cms__table-head-category">Категория</th>
+                  <th class="cms__table-head-units">ед/изм</th>
+                  <th class="cms__table-head-count">количество</th>
+                  <th class="cms__table-head-price">цена</th>
+                  <th class="cms__table-head-result">ИТОГ</th>
+                  <th class="cms__table-head-btn"></th>
+                  <!-- <th class="cms__table-head-btn"></th>
+                  <th class="cms__table-head-btn"></th> -->
                 </tr>
               </thead>
-              <tbody class="cms__table-body">
-                <tr class="cms__table-raw">
-                  <td>246016548</td>
-                  <td>Навигационная система Soundmax</td>
-                  <td>Техника для дома</td>
-                  <td>шт</td>
-                  <td>5</td>
-                  <td>$100</td>
-                  <td>$500</td>
-                  <td><button>1</button></td>
-                  <td><button>2</button></td>
-                  <td><button>3</button></td>
+              <tbody>
+                <tr>
+                  <td class="cms__table-id">246016548</td>
+                  <td class="cms__table-name">
+                    Навигационная система Soundmax
+                  </td>
+                  <td class="cms__table-category">Техника для дома</td>
+                  <td class="cms__table-units">шт</td>
+                  <td class="cms__table-count">5</td>
+                  <td class="cms__table-price">$100</td>
+                  <td class="cms__table-result">$500</td>
+                  <td class="cms__table-bt-no-image">
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/no-image.svg" alt="" />
+                    </button>
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/edit.svg" alt="" />
+                    </button>
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/delete.svg" alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cms__table-head-id">937295527</td>
+                  <td class="cms__table-name">
+                    Настольная игра “На 4-х ногах”
+                  </td>
+                  <td class="cms__table-category">Настольные игры</td>
+                  <td class="cms__table-units">шт</td>
+                  <td class="cms__table-count">12</td>
+                  <td class="cms__table-price">$14</td>
+                  <td class="cms__table-result">$168</td>
+                  <td class="cms__table-bt-no-image">
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/no-image.svg" alt="" />
+                    </button>
+                  </td>
+                  <td class="cms__table-btn-edit">
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/edit.svg" alt="" />
+                    </button>
+                  </td>
+                  <td class="cms__table-btn">
+                    <button class="cms__table-btn-icon">
+                      <img src="./src/img/icons/delete.svg" alt="" />
+                    </button>
+                  </td>
                 </tr>
               </tbody>
               <tfoot>
-                <tr class="cms__table-raw">
+                <tr>
                   <td></td>
                 </tr>
               </tfoot>

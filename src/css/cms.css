@@ -2,14 +2,15 @@
   display: block;
   position: relative;
   max-width: 1300px;
-  min-height: 1008px;
+  /* min-height: 1008px; */
   margin: 0 auto;
   padding: 79px 0px 110px;
 }
 
 .cms__container {
-  max-width: 1100px;
+  max-width: 1160px;
   min-height: 762px;
+  padding: 0 30px;
 }
 
 .cms__header {
@@ -66,7 +67,7 @@
   padding: 15px 20px;
   justify-content: space-between;
   width: 100%;
-  height: 70px;
+  min-height: 70px;
   gap: 20px;
 }
 
@@ -143,6 +144,7 @@
 .cms__subheader-add-goods {
   width: 181px;
   height: 39px;
+  padding: 10px 15px;
   color: var(--white-color);
   background: var(--purple-blue-color);
   border: none;
@@ -155,13 +157,12 @@
 }
 
 .cms__table-wrapper {
-  min-width: 1100px;
-  min-height: 762px;
+  width: 100%;
   overflow-x: auto;
 }
 
 .cms__table {
-  width: 100%;
+  min-width: 1100px;
   border-collapse: collapse;
   border-spacing: 15px 0;
 }
@@ -267,7 +268,7 @@ td {
   justify-content: end;
   padding: 15px;
   gap: 50px;
-  width: 100%;
+  width: 1100px;
   height: 46px;
   background-color: var(--magnolia-color);
   border-radius: 0 0 8px 8px;
@@ -300,4 +301,70 @@ td {
   background-color: var(--magnolia-color);
   width: 6;
   height: 10px;
+}
+
+@media (max-width: 1035px) {
+  .cms__subheader {
+    gap: 10px;
+  }
+
+  .cms__subheader-setting {
+    gap: 10px;
+  }
+
+  .cms__subheader-add-goods {
+    padding: 10px 5px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 810px) {
+  .cms__container {
+    max-width: 1160px;
+    padding: 0 20px;
+  }
+
+  .cms__subheader-search-input {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .cms__subheader-add-goods {
+    padding: 10px 5px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media (max-width: 727px) {
+  .cms__subheader {
+    flex-wrap: wrap;
+  }
+  .cms__subheader-setting {
+    order: 2;
+  }
+}
+
+@media (max-width: 433px) {
+  .cms__subheader-setting {
+    flex-wrap: wrap;
+  }
+
+  .cms__result-text {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+    text-transform: none;
+    margin-right: 3px;
+    color: var(--purple-grey-color);
+  }
+
+  .cms__result-value {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--purple-blue-color);
+  }
 }

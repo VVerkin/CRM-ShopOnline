@@ -214,7 +214,7 @@
 /* Ограничение загрузки изображения */
 
 .modal__form-file-info {
-  display: none;
+  /* display: none; */
   padding-top: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -469,7 +469,7 @@
   }
 
   .modal__error {
-    /* display: none; */
+    display: none;
     width: 280px;
     height: 280px;
   }

@@ -360,150 +360,158 @@
         </div>
       </div>
     </section>
-
-    <section class="modal">
-      <button type="button" class="modal__btn-close"></button>
-      <div class="container modal__container">
-        <div class="modal__header">
-          <div class="modal__title">Добавить товар</div>
-        </div>
-        <form
-          class="modal__form"
-          id="modal-form"
-          action="https://jsonplaceholder.typicode.com/posts"
-          method="post"
-          target="_blank"
-        >
-          <fieldset class="modal__form-fieldset">
-            <div class="modal__form-container">
-              <div class="modal__form-name">
-                <label for="name" class="modal__form-label">Наименование</label>
-                <input
-                  class="modal__form-input"
-                  type="text"
-                  name="name"
-                  id="name"
-                />
-              </div>
-
-              <div class="modal__form-description">
-                <label for="description" class="modal__form-label"
-                  >Описание</label
-                >
-                <textarea
-                  class="modal__form-textarea"
-                  name="description"
-                  id="description"
-                ></textarea>
-              </div>
-
-              <div class="modal__form-category">
-                <label for="category" class="modal__form-label"
-                  >Категория</label
-                >
-                <input
-                  class="modal__form-input"
-                  type="text"
-                  name="category"
-                  id="category"
-                />
-              </div>
-
-              <div class="modal__form-units">
-                <label for="units" class="modal__form-label"
-                  >Единицы измерения</label
-                >
-                <input
-                  class="modal__form-input"
-                  type="text"
-                  name="units"
-                  id="units"
-                />
-              </div>
-
-              <div class="modal__form-count">
-                <label for="count" class="modal__form-label">Количество</label>
-                <input
-                  class="modal__form-input"
-                  type="number"
-                  name="count"
-                  id="count"
-                />
-              </div>
-
-              <div class="modal__form-discount">
-                <label for="add-discount" class="modal__form-checkbox"
-                  >Дисконт</label
-                >
-                <input
-                  class="modal__form-checkbox-input"
-                  type="checkbox"
-                  name="discount"
-                  aria-label="Получить скидку"
-                />
-                <input
-                  class="modal__form-input-small"
-                  type="text"
-                  name="discount-text"
-                  id="add-discount"
-                  disabled
-                />
-              </div>
-
-              <div class="modal__form-price">
-                <label for="price" class="modal__form-label">Цена</label>
-                <input
-                  class="modal__form-input"
-                  type="number"
-                  name="price"
-                  id="price"
-                />
-              </div>
-
-              <!-- <div class="modal__form-add-img"> -->
-              <div class="modal__form-file-info">
-                Изображение не должно превышать размер 1 Мб
-              </div>
-
-              <div class="modal__form-file-wrapper">
-                <label class="modal__form-file-label">
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <button type="button" class="modal__btn-close"></button>
+        <div class="container modal__container">
+          <div class="modal__header">
+            <div class="modal__title">Добавить товар</div>
+          </div>
+          <form
+            class="modal__form"
+            id="modal-form"
+            action="https://jsonplaceholder.typicode.com/posts"
+            method="post"
+            target="_blank"
+          >
+            <fieldset class="modal__form-fieldset">
+              <div class="modal__form-container">
+                <div class="modal__form-name">
+                  <label for="name" class="modal__form-label"
+                    >Наименование</label
+                  >
                   <input
-                    class="modal__form-file-input"
-                    form="modal-form"
-                    type="file"
-                    accept="image/*"
-                  />Добавить изображение
-                </label>
-              </div>
-            </div>
-            <!-- </div> -->
-          </fieldset>
-        </form>
+                    class="modal__form-input"
+                    type="text"
+                    name="name"
+                    id="name"
+                  />
+                </div>
 
-        <div class="modal__goods">
-          <div class="modal__goods-cost">
-            <div class="modal__goods-text">Итоговая стоимость:</div>
-            <div class="modal__goods-value">$ 900.00</div>
+                <div class="modal__form-description">
+                  <label for="description" class="modal__form-label"
+                    >Описание</label
+                  >
+                  <textarea
+                    class="modal__form-textarea"
+                    name="description"
+                    id="description"
+                  ></textarea>
+                </div>
+
+                <div class="modal__form-category">
+                  <label for="category" class="modal__form-label"
+                    >Категория</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="category"
+                    id="category"
+                  />
+                </div>
+
+                <div class="modal__form-units">
+                  <label for="units" class="modal__form-label"
+                    >Единицы измерения</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="units"
+                    id="units"
+                  />
+                </div>
+
+                <div class="modal__form-count">
+                  <label for="count" class="modal__form-label"
+                    >Количество</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="number"
+                    name="count"
+                    id="count"
+                  />
+                </div>
+
+                <div class="modal__form-discount">
+                  <label for="add-discount" class="modal__form-checkbox"
+                    >Дисконт</label
+                  >
+                  <input
+                    class="modal__form-checkbox-input"
+                    type="checkbox"
+                    name="discount"
+                    aria-label="Получить скидку"
+                  />
+                  <input
+                    class="modal__form-input-small"
+                    type="text"
+                    name="discount-text"
+                    id="add-discount"
+                    disabled
+                  />
+                </div>
+
+                <div class="modal__form-price">
+                  <label for="price" class="modal__form-label">Цена</label>
+                  <input
+                    class="modal__form-input"
+                    type="number"
+                    name="price"
+                    id="price"
+                  />
+                </div>
+
+                <!-- <div class="modal__form-add-img"> -->
+                <div class="modal__form-file-info">
+                  Изображение не должно превышать размер 1 Мб
+                </div>
+
+                <div class="modal__form-file-wrapper">
+                  <label class="modal__form-file-label">
+                    <input
+                      class="modal__form-file-input"
+                      form="modal-form"
+                      type="file"
+                      accept="image/*"
+                    />Добавить изображение
+                  </label>
+                </div>
+              </div>
+              <!-- </div> -->
+            </fieldset>
+          </form>
+
+          <div class="modal__goods">
+            <div class="modal__goods-cost">
+              <div class="modal__goods-text">Итоговая стоимость:</div>
+              <div class="modal__goods-value">$ 900.00</div>
+            </div>
+
+            <button
+              class="modal__btn-add-goods"
+              form="modal-form"
+              type="submit"
+            >
+              Добавить товар
+            </button>
           </div>
 
-          <button class="modal__btn-add-goods" form="modal-form" type="submit">
-            Добавить товар
-          </button>
-        </div>
-
-        <div class="modal__error">
-          <button type="button" class="modal__error-btn-close"></button>
-          <div class="modal__error-message">
-            <img
-              class="modal__error-img"
-              src="./src/img/img/Error.svg"
-              alt=""
-            />
-            <div class="modal__error-text">Что-то пошло не так</div>
+          <div class="modal__error">
+            <button type="button" class="modal__error-btn-close"></button>
+            <div class="modal__error-message">
+              <img
+                class="modal__error-img"
+                src="./src/img/img/Error.svg"
+                alt=""
+              />
+              <div class="modal__error-text">Что-то пошло не так</div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <div class="modal-overlay" id="modal-overlay"></div>
+    </div>
   </body>
 </html>

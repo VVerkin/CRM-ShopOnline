@@ -6,6 +6,9 @@ console.log(modalTitle);
 
 // Кнопка возле id и сам id
 
+const goodsId = document.querySelector('.modal__id-value');
+const editGoodsIdBtn = document.querySelector('.madal__id-btn');
+console.log(goodsId, editGoodsIdBtn);
 // Форма
 const form = document.querySelector('.modal__form');
 console.log(form);

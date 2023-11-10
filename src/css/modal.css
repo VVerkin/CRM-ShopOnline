@@ -36,6 +36,8 @@
 }
 
 .modal__header {
+  display: flex;
+  justify-content: space-between;
   padding: 12px 0 21px;
   border-bottom: 1px solid var(--light-purple-gray-color);
   margin-bottom: 22px;
@@ -46,6 +48,23 @@
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.1em;
+}
+
+.modal__id {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--clear-gray-color);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.madal__id-btn {
+  border: none;
+  width: 16px;
+  height: 16px;
 }
 
 .modal__form {
@@ -299,8 +318,12 @@
   color: var(--purple-blue-color);
 }
 
+/* .modal__active {
+  display: flex;
+} */
+
 .modal-overlay {
-  display: none;
+  /* display: none; */
   z-index: 1;
   position: fixed;
   top: 0;

@@ -318,12 +318,11 @@
   color: var(--purple-blue-color);
 }
 
-/* .modal__active {
+.modal__active {
   display: flex;
-} */
+}
 
 .modal-overlay {
-  /* display: none; */
   z-index: 1;
   position: fixed;
   top: 0;

@@ -39,12 +39,12 @@ const goods = [
 ];
 
 const createRow = ({id, title, category, units, count, price, result, images}) => { // Переименовываем name в firatName, т.к. в глобальной области видимости уже есть name 
-    // Создаем строку
-    const tr = document.createElement('tr');
-    // Назначаем класс
-    tr.classList.add('cms__tr');
-    // Формируем верстку и вставляем в tr
-    tr.insertAdjacentHTML('afterbegin', `
+  // Создаем строку
+  const tr = document.createElement('tr');
+  // Назначаем класс
+  tr.classList.add('cms__tr');
+  // Формируем верстку и вставляем в tr
+  tr.insertAdjacentHTML('afterbegin', `
     <td class='cms__table-id'>${id}</td>
     <td class='cms__table-name'>${title}</td>
     <td class='cms__table-category'>${category}</td>
@@ -64,15 +64,15 @@ const createRow = ({id, title, category, units, count, price, result, images}) =
       </button>
     </td>
     `);
-      // Возвращаем получившуюся строку
-      return tr;
-    };
+  // Возвращаем получившуюся строку
+  return tr;
+};
 
-    const renderGoods = (arr) => {
-        const table = document.querySelector('.cms__table');
-        // Создаем элементы перебирая массив с объектами
-        const allRow = arr.map(createRow);
-        // выводим результат на страницу
-        allRow.forEach(tr => table.append(tr));
-      };
-      renderGoods(goods);
+const renderGoods = (arr) => {
+  const table = document.querySelector('.cms__table');
+  // Создаем элементы перебирая массив с объектами
+  const allRow = arr.map(createRow);
+  // выводим результат на страницу
+  allRow.forEach(tr => table.append(tr));
+};
+renderGoods(goods);

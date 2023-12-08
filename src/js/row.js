@@ -38,26 +38,41 @@ const goods = [
   },
 ];
 
-// Ф-я создает строку на основе объекта
-const createRow = (obj) => {
-  // Создаем строку
-  const row = document.createElement('tr');
-// Перебираем свойства объекта
-  Object.values(obj).forEach(value => {
-  // Добавляем значение в строку
-  row.insertAdjacentHTML('beforeend',`<td>${value}</td>`);
-  });
-  // Возвращаем гтовую строку
-  return row;
-};
+const createRow = ({id, title, category, units, count, price, result, images}) => { // Переименовываем name в firatName, т.к. в глобальной области видимости уже есть name 
+    // Создаем строку
+    const tr = document.createElement('tr');
+    // Назначаем класс
+    tr.classList.add('cms__tr');
+    // Формируем верстку и вставляем в tr
+    tr.insertAdjacentHTML('afterbegin', `
+    <td class='cms__table-id'>${id}</td>
+    <td class='cms__table-name'>${title}</td>
+    <td class='cms__table-category'>${category}</td>
+    <td class='cms__table-units'>${units}</td>
+    <td class='cms__table-count'>${count}</td>
+    <td class='cms__table-price'>$${price}</td>
+    <td class='cms__table-result'>$${count*price}</td>
+    <td class='cms__table-btn'>
+      <button class="cms__table-btn-icon" aria-label='image'>
+      <img src="./src/img/icons/no-image.svg" alt="" />
+      </button>
+      <button class="cms__table-btn-icon" aria-label='edit'>
+      <img src="./src/img/icons/edit.svg" alt="" />
+      </button>
+      <button class="cms__table-btn-icon" aria-label='delete'>
+      <img src="./src/img/icons/delete.svg" alt="" />
+      </button>
+    </td>
+    `);
+      // Возвращаем получившуюся строку
+      return tr;
+    };
 
-// Ф-я принимает массив с объектами
-const renderGoods = (arr) => {
-  // Получаем таблицу по классу
-  const table = document.querySelector('.cms__table');
-    // Перебираем массив объектов и создаем строки с помощью createRow
-    const allRow = goods.map(createRow);
-    // Вставляем строки в таблицу
-    allRow.forEach(row => table.append(row));
-  };
-renderGoods();
+    const renderGoods = (arr) => {
+        const table = document.querySelector('.cms__table');
+        // Создаем элементы перебирая массив с объектами
+        const allRow = arr.map(createRow);
+        // выводим результат на страницу
+        allRow.forEach(tr => table.append(tr));
+      };
+      renderGoods(goods);

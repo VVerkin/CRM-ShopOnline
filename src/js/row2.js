@@ -41,41 +41,29 @@ const goods = [
 const createRow = ({id, title, category, units, count, price, result, images}) => { // Переименовываем name в firatName, т.к. в глобальной области видимости уже есть name 
     // Создаем строку
     const tr = document.createElement('tr');
-      // Оформляем омтальные элементы
-      const tdId = document.createElement('td');
-      tdId.classList.add('cms__table-id');
-      tdId.textContent = id; 
-
-      const tdTitle = document.createElement('td');
-      tdTitle.classList.add('cms__table-name');
-      tdTitle.textContent = title;
-
-      const tdCategory = document.createElement('td');
-      tdCategory.classList.add('cms__table-category');
-      tdCategory.textContent = category;
-
-      const tdUnits = document.createElement('td');
-      tdUnits.classList.add('cms__table-units');
-      tdUnits.textContent = units;
-
-      const tdCount = document.createElement('td');
-      tdCount.classList.add('cms__table-count');
-      tdCount.textContent = count;
-
-      const tdPrice = document.createElement('td');
-      tdPrice .classList.add('cms__table-price');
-      tdPrice.textContent = `$${price}`;
-
-      const tdResult = document.createElement('td');
-      tdResult.classList.add('cms__table-result');
-      tdResult.textContent = `$${result}`;
-
-      const tdImages = document.createElement('td');
-      tdImages.classList.add('cms__table-btn');
-      tdImages.textContent = images;
-
-      // Вставляем td в tr
-      tr.append(tdId, tdTitle, tdCategory, tdUnits, tdCount, tdPrice, tdResult, tdImages);
+    // Назначаем класс
+    tr.classList.add('cms__tr');
+    // Формируем верстку и вставляем в tr
+    tr.insertAdjacentHTML('afterbegin', `
+    <td class='cms__table-id'>${id}</td>
+    <td class='cms__table-name'>${title}</td>
+    <td class='cms__table-category'>${category}</td>
+    <td class='cms__table-units'>${units}</td>
+    <td class='cms__table-count'>${count}</td>
+    <td class='cms__table-price'>$${price}</td>
+    <td class='cms__table-result'>$${count*price}</td>
+    <td class='cms__table-btn'>
+      <button class="cms__table-btn-icon" aria-label='image'>
+      <img src="./src/img/icons/no-image.svg" alt="" />
+      </button>
+      <button class="cms__table-btn-icon" aria-label='edit'>
+      <img src="./src/img/icons/edit.svg" alt="" />
+      </button>
+      <button class="cms__table-btn-icon" aria-label='delete'>
+      <img src="./src/img/icons/delete.svg" alt="" />
+      </button>
+    </td>
+    `);
       // Возвращаем получившуюся строку
       return tr;
     };

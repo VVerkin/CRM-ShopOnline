@@ -67,7 +67,7 @@ const goods = [
     allRow.forEach(tr => table.append(tr));
   };
   renderGoods(goods);
-  // Получаем необходимые элементы
+
   const btnAdd = document.querySelector('.cms__subheader-add-goods');
   const modal = document.querySelector('.modal');
   const formOverlay = document.querySelector('.modal-overlay');
@@ -87,4 +87,4 @@ const goods = [
   // Ф-я закрывает модальное окно при нажатии на overlay
   formOverlay.addEventListener('click', () => {
     formOverlay.classList.remove('modal__active');
-    });
+  });

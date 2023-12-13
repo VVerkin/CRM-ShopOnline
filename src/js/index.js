@@ -1,36 +1,5 @@
 'use strict'
 
-// Заголовок модального окна
-const modalTitle = document.querySelector('.modal__title');
-console.log(modalTitle);
-
-// Кнопка возле id и сам id
-const goodsId = document.querySelector('.modal__id-value');
-const editGoodsIdBtn = document.querySelector('.madal__id-btn');
-console.log(goodsId, editGoodsIdBtn);
-
-// Форма
-const form = document.querySelector('.modal__form');
-console.log(form);
-
-// Чекбокс и  Поле рядом с чекбоксом
-const discountCheckbox = document.querySelector('.modal__form-checkbox-input');
-const discountInput = document.querySelector('.modal__form-input-small');
-console.log(discountCheckbox, discountInput );
-
-// Итоговая стоимость
-const resultCoast = document.querySelector('.modal__goods-value');
-console.log(resultCoast);
-
-/* 
-1. Создайте функцию createRow, которая будет получать объект и на основе объекта формировать элемент <tr> с <td> внутри
-
-2. Создайте функцию renderGoods, принимает один параметр массив с объектами
-Функция renderGoods перебирает массив и вставляет строки, созданные на основе createRow, в таблицу (советую использовать метод map)
-
-Для тестирования функционала можете написать свой массив
-*/ 
-
 const goods = [
     {
       "id": 253842678,
@@ -98,3 +67,24 @@ const goods = [
     allRow.forEach(tr => table.append(tr));
   };
   renderGoods(goods);
+  // Получаем необходимые элементы
+  const btnAdd = document.querySelector('.cms__subheader-add-goods');
+  const modal = document.querySelector('.modal');
+  const formOverlay = document.querySelector('.modal-overlay');
+  const btnClose = document.querySelector('.modal__btn-close');
+  // При клике на кнопку "Добавить товар" открывается модальное окно
+  btnAdd.addEventListener('click', () => {
+    formOverlay.classList.add('modal__active');
+  });
+  // Ф-я блокируем всплытие что бы модальное окно не закрывалась при клике на область окна
+  modal.addEventListener('click', event => {
+    event.stopPropagation();
+  });
+  // Ф-я закрывает модальное окно при нажатии на крестик
+  btnClose.addEventListener('click', () => {
+    formOverlay.classList.remove('modal__active');
+  });
+  // Ф-я закрывает модальное окно при нажатии на overlay
+  formOverlay.addEventListener('click', () => {
+    formOverlay.classList.remove('modal__active');
+    });

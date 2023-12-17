@@ -257,7 +257,9 @@ td {
   gap: 20px;
 }
 
-.cms__table-btn-icon {
+.cms__table-btn-img,
+.cms__table-btn-edit,
+.cms__table-btn-del {
   width: 20px;
   height: 20px;
   border: none;

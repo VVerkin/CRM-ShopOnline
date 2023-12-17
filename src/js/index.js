@@ -98,10 +98,26 @@ formOverlay.addEventListener('click', e => {
   }
 });
 
-// Ф-я при помощи делегирования удаляет строкку при нажатии на иконку "удалить"
+// Ф-я при помощи делегирования удаляет строкку при нажатии 
+// на иконку "удалить"и эл-т из массива
+// Вещшаем обработчик события на tbody
 tbody.addEventListener('click', e => {
+  // Получаем эл-т на котором произошел клик
   const target = e.target;
+  // Проверяем, является ли ближайший родительский эл-т с классом 
+  // "cms__table-btn-del" кнопкой удаления товара
   if (target.closest('.cms__table-btn-del')) {
-    target.closest('.cms__tr').remove();
+    // В переменную получаем строку таблицы
+    const tr = target.closest('.cms__tr');
+    // Получаем содержимое элемента "id" из строки
+    const id = parseInt(tr.querySelector('.cms__table-id').textContent);
+    // Находим индекс объекта в массиве "goods",
+    // у которого значение свойства "id" совпадает с id товара
+    // и удаляем этот объект из массива с помощью метода "splice"
+    goods.splice(goods.findIndex((item) => item.id === id), 1);
+    // Удаляем строку таблицы из DOM
+    tr.remove();
+    // Выводим в консоль получившийся массив после удаления строк
+    console.log(goods);
   }
 });

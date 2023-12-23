@@ -264,6 +264,27 @@ td {
   height: 20px;
   border: none;
   background-color: var(--white-color);
+  color: var(--purple-gray-color);
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+}
+
+:where(.cms__table-btn-img,
+.cms__table-btn-edit,
+.cms__table-btn-del):hover {
+  color: var(--red-color);
+}
+
+:where(.cms__table-btn-img,
+.cms__table-btn-edit,
+.cms__table-btn-del):focus {
+  outline-color: var(--red-color);
+}
+
+:where(.cms__table-btn-img,
+.cms__table-btn-edit,
+.cms__table-btn-del):active {
+  color: var(--purple-blue-color);
 }
 
 .cms__table-footer {

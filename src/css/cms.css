@@ -272,7 +272,7 @@ td {
 :where(.cms__table-btn-img,
 .cms__table-btn-edit,
 .cms__table-btn-del):hover {
-  color: var(--red-color);
+  color: var(--cobalt-blue-color);
 }
 
 :where(.cms__table-btn-img,

@@ -129,3 +129,21 @@ tbody.addEventListener('click', e => {
     console.log(goods);
   }
 });
+
+// Получаем чекбокс модального окна
+const discountCheckbox = document.querySelector('.modal__form-checkbox-input');
+// Получаем modalInput
+const discountInput = document.querySelector('.modal__form-input-small');
+
+// Навешиваем событие на изменение состояния чекбокса
+discountCheckbox.addEventListener('change', () => {
+  // Условие, при котором чекбокс "выбран"
+  if (discountCheckbox.checked) {
+    // Поле разблокировано
+    discountInput.disabled = false;
+  } else {
+    // Очищаем и блокируем поле
+    discountInput.value = '';
+    discountInput.disabled = true;
+  }
+});

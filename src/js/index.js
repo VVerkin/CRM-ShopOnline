@@ -87,26 +87,36 @@ const renderGoods = (arr) => {
 };
 renderGoods(goods);
 
-const btnAdd = document.querySelector('.cms__subheader-add-goods');
-const formOverlay = document.querySelector('.modal-overlay');
-const btnClose = document.querySelector('.modal__btn-close');
+// Ф-я управляет модальным окном (открыть/закрыть форму)
 
-// При клике на кнопку "Добавить товар" открывается модальное окно
-btnAdd.addEventListener('click', () => {
-  formOverlay.classList.add('modal__active');
-});
+const modalControl = () => {
+  const btnAdd = document.querySelector('.cms__subheader-add-goods');
+  const formOverlay = document.querySelector('.modal-overlay');
+  const btnClose = document.querySelector('.modal__btn-close');
 
-// Ф-я закрывает модальное окно при нажатии на overlay или крестик
-formOverlay.addEventListener('click', e => {
-  const target = e.target;
-  // Проверяем, что target - это formOverlay или крестик
-  if (target === formOverlay || target === btnClose) {
-  // Если да, то закрываем форму
-    formOverlay.classList.remove('modal__active');
-  }
-});
+  // При клике на кнопку "Добавить товар" открывается модальное окно
+  btnAdd.addEventListener('click', () => {
+    formOverlay.classList.add('modal__active');
+  });
 
-// Ф-я при помощи делегирования удаляет строкку при нажатии 
+  // Ф-я закрывает модальное окно при нажатии на overlay или крестик
+  formOverlay.addEventListener('click', e => {
+    const target = e.target;
+    // Проверяем, что target - это formOverlay или крестик
+    if (target === formOverlay || target === btnClose) {
+    // Если да, то закрываем форму
+      formOverlay.classList.remove('modal__active');
+    }
+  });
+};
+
+modalControl();
+
+const formControl = () => {
+  
+}
+
+// Ф-я при помощи делегирования удаляет строкку при нажатии
 // на иконку "удалить"и эл-т из массива
 // Вещшаем обработчик события на tbody
 tbody.addEventListener('click', e => {
@@ -129,6 +139,9 @@ tbody.addEventListener('click', e => {
     console.log(goods);
   }
 });
+
+/* В модальном окне, если поставить чекбокс то поле рядом разблокируется.
+Если чекбокс убрать, то оно очищается и блокируется */
 
 // Получаем чекбокс модального окна
 const discountCheckbox = document.querySelector('.modal__form-checkbox-input');

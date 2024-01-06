@@ -3,7 +3,7 @@
 const goods = [
   {
     'id': 253842678,
-    'title': 'Смартфон Xiaomi 11T 8/128GB',
+    'name': 'Смартфон Xiaomi 11T 8/128GB',
     'category': 'mobile-phone',
     'units': 'шт',
     'count': 3,
@@ -16,7 +16,7 @@ const goods = [
   },
   {
     'id': 253842679,
-    'title': 'Смартфон Samsung S23 8/256GB',
+    'name': 'Смартфон Samsung S23 8/256GB',
     'category': 'mobile-phone',
     'units': 'шт',
     'count': 1,
@@ -29,7 +29,7 @@ const goods = [
   },
   {
     'id': 253842680,
-    'title': 'Смартфон Samsung А54 8/128GB',
+    'name': 'Смартфон Samsung А54 8/128GB',
     'category': 'mobile-phone',
     'units': 'шт',
     'count': 4,
@@ -41,7 +41,13 @@ const goods = [
     },
   },
 ];
-const createRow = ({id, title, category, units, count, price}) => {
+
+const addItemGoods = item => {
+  goods.push(item);
+  console.log('goods:', goods);
+};
+
+const createRow = ({id, name, category, units, count, price}) => {
   // Создаем строку
   const tr = document.createElement('tr');
   // Назначаем класс
@@ -49,7 +55,7 @@ const createRow = ({id, title, category, units, count, price}) => {
   // Формируем верстку и вставляем в tr
   tr.insertAdjacentHTML('afterbegin', `
       <td class='cms__table-id'>${id}</td>
-      <td class='cms__table-name'>${title}</td>
+      <td class='cms__table-name'>${name}</td>
       <td class='cms__table-category'>${category}</td>
       <td class='cms__table-units'>${units}</td>
       <td class='cms__table-count'>${count}</td>
@@ -93,28 +99,62 @@ const modalControl = () => {
   const btnAdd = document.querySelector('.cms__subheader-add-goods');
   const formOverlay = document.querySelector('.modal-overlay');
   const btnClose = document.querySelector('.modal__btn-close');
+  // Ф-я открывает модальное окно
+  const openModal = () => {
+    formOverlay.classList.add('modal__active');
+  };
+  // Ф-я закрывает модальное окно
+  const closeModal = () => {
+    formOverlay.classList.remove('modal__active');
+  };
 
   // При клике на кнопку "Добавить товар" открывается модальное окно
-  btnAdd.addEventListener('click', () => {
-    formOverlay.classList.add('modal__active');
-  });
+  btnAdd.addEventListener('click', openModal);
 
   // Ф-я закрывает модальное окно при нажатии на overlay или крестик
   formOverlay.addEventListener('click', e => {
     const target = e.target;
     // Проверяем, что target - это formOverlay или крестик
     if (target === formOverlay || target === btnClose) {
-    // Если да, то закрываем форму
-      formOverlay.classList.remove('modal__active');
+    // Если да, вызываем ф-ю закрытия модального окна
+      closeModal();
     }
   });
+  return {
+    closeModal,
+  };
 };
 
-modalControl();
+const {closeModal} = modalControl();
+// A-z добавляет элемент в таблицу
+const addItemTable = (item, list) => {
+  list.append(createRow(item));
+};
 
-const formControl = () => {
-  
-}
+const formControl = (list, closeModal) => {
+  // Получаем форму
+  const form = document.querySelector('.modal__form');
+  form.addEventListener('submit', e => {
+    // Убираем стандартное поведение формы
+    e.preventDefault();
+
+    // Реализуем отправку данных
+    // Создаем formData и передаем туда форму через e.target
+    const formData = new FormData(e.target);
+    // Создаем объект на основе данных, введенных в поля формы
+    const newItem = Object.fromEntries(formData);
+    console.log('newItem:', newItem);
+    // Вызываем ф-ю добавления товара в таблицу
+    addItemTable(newItem, tbody);
+    // Вызываем ф-ю добавления нового элемента в массив
+    addItemGoods(newItem);
+    // Очищаем форму после нажатия кнопки добавить товар
+    form.reset();
+    // Вызываем ф-ю закрытия формы
+    closeModal();
+  });
+};
+formControl(tbody, closeModal);
 
 // Ф-я при помощи делегирования удаляет строкку при нажатии
 // на иконку "удалить"и эл-т из массива

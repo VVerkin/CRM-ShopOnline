@@ -127,11 +127,11 @@ const modalControl = () => {
 
 const {closeModal} = modalControl();
 // A-z добавляет элемент в таблицу
-const addItemTable = (item, list) => {
-  list.append(createRow(item));
+const addItemTable = (item, tbody) => {
+  tbody.append(createRow(item));
 };
 
-const formControl = (list, closeModal) => {
+const formControl = (tbody, closeModal) => {
   // Получаем форму
   const form = document.querySelector('.modal__form');
   form.addEventListener('submit', e => {
@@ -200,3 +200,16 @@ discountCheckbox.addEventListener('change', () => {
     discountInput.disabled = true;
   }
 });
+
+
+const goodsCount = document.querySelector('.modal__form-count .modal__form-input');
+const goodsPrice = document.querySelector('.modal__form-price .modal__form-input');
+const goodsSum = document.querySelector('.modal__goods-value');
+// Ф-я расчитывает итоговую стоимость товаров при заполнении количества и цены в модальное окно
+const modalGoodsSum = () => {
+  goodsSum.textContent = `$${goodsCount.value * goodsPrice.value}`;
+};
+modalGoodsSum();
+
+goodsCount.addEventListener('input', modalGoodsSum);
+goodsPrice.addEventListener('input', modalGoodsSum);

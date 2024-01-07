@@ -84,6 +84,7 @@ const createRow = ({id, name, category, units, count, price}) => {
   // Возвращаем получившуюся строку
   return tr;
 };
+
 const tbody = document.querySelector('.cms__table-body');
 const renderGoods = (arr) => {
   // Создаем элементы перебирая массив с объектами
@@ -102,7 +103,6 @@ const updateResultSum = () => {
 updateResultSum();
 
 // Ф-я управляет модальным окном (открыть/закрыть форму)
-
 const modalControl = () => {
   const btnAdd = document.querySelector('.cms__subheader-add-goods');
   const formOverlay = document.querySelector('.modal-overlay');
@@ -162,6 +162,7 @@ const formControl = (tbody, closeModal) => {
     form.reset();
     // Вызываем ф-ю закрытия формы
     closeModal();
+    updateResultSum();
   });
 };
 formControl(tbody, closeModal);
@@ -212,7 +213,6 @@ discountCheckbox.addEventListener('change', () => {
     discountInput.disabled = true;
   }
 });
-
 
 const goodsCount = document.querySelector('.modal__form-count .modal__form-input');
 const goodsPrice = document.querySelector('.modal__form-price .modal__form-input');

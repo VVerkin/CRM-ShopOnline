@@ -93,6 +93,14 @@ const renderGoods = (arr) => {
 };
 renderGoods(goods);
 
+// Ф-я обновляет итоговую стоимость товаров в таблице
+const updateResultSum = () => {
+  const resultGoodsSum = document.querySelector('.cms__result-value');
+  resultGoodsSum.textContent = `$${goods.reduce((acc, item) =>
+    acc + item.price * item.count, 0)}`;
+};
+updateResultSum();
+
 // Ф-я управляет модальным окном (открыть/закрыть форму)
 
 const modalControl = () => {
@@ -126,9 +134,11 @@ const modalControl = () => {
 };
 
 const {closeModal} = modalControl();
-// A-z добавляет элемент в таблицу
+// Ф-я добавляет элемент в таблицу
 const addItemTable = (item, tbody) => {
   tbody.append(createRow(item));
+  // Обновляем итоговую стоимость товаров в таблице после удаления элемента
+  updateResultSum();
 };
 
 const formControl = (tbody, closeModal) => {
@@ -177,6 +187,8 @@ tbody.addEventListener('click', e => {
     tr.remove();
     // Выводим в консоль получившийся массив после удаления строк
     console.log(goods);
+    // Обновляем итоговую стоимость товаров в таблице после удаления элемента
+    updateResultSum();
   }
 });
 
@@ -213,3 +225,4 @@ modalGoodsSum();
 
 goodsCount.addEventListener('input', modalGoodsSum);
 goodsPrice.addEventListener('input', modalGoodsSum);
+

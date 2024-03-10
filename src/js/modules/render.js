@@ -1,0 +1,13 @@
+import {createRow} from './createElements.js ';
+import control from './control.js';
+
+const {
+  tbody,
+} = control;
+
+export const renderGoods = (arr) => {
+  // Создаем элементы перебирая массив с объектами
+  const allRow = arr.map(createRow);
+  // выводим результат на страницу
+  allRow.forEach(tr => tbody.append(tr));
+};

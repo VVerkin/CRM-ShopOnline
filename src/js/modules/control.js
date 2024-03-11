@@ -1,6 +1,13 @@
 import {goods} from './goods.js';
 import calculation from './calculation.js';
 import {createRow} from './createElements.js ';
+import variables from './variables.js';
+
+const {
+  tbody,
+  discountCheckbox,
+  discountInput,
+} = variables;
 
 const {
   updateResultSum,
@@ -74,53 +81,54 @@ const formControl = (tbody, closeModal) => {
   });
 };
 
-// Ф-я при помощи делегирования удаляет строкку при нажатии
-// на иконку "удалить"и эл-т из массива
-// Вещшаем обработчик события на tbody
-const tbody = document.querySelector('.cms__table-body');
-tbody.addEventListener('click', e => {
-  // Получаем эл-т на котором произошел клик
-  const target = e.target;
-  // Проверяем, является ли ближайший родительский эл-т с классом 
-  // "cms__table-btn-del" кнопкой удаления товара
-  if (target.closest('.cms__table-btn-del')) {
-    // В переменную получаем строку таблицы
-    const tr = target.closest('.cms__tr');
-    // Получаем содержимое элемента "id" из строки
-    const id = parseInt(tr.querySelector('.cms__table-id').textContent);
-    // Находим индекс объекта в массиве "goods",
-    // у которого значение свойства "id" совпадает с id товара
-    // и удаляем этот объект из массива с помощью метода "splice"
-    goods.splice(goods.findIndex((item) => item.id === id), 1);
-    // Удаляем строку таблицы из DOM
-    tr.remove();
-    // Выводим в консоль получившийся массив после удаления строк
-    console.log(goods);
-    // Обновляем итоговую стоимость товаров в таблице после удаления элемента
-    updateResultSum();
-  }
-});
-
 /* В модальном окне, если поставить чекбокс то поле рядом разблокируется.
 Если чекбокс убрать, то оно очищается и блокируется */
 
-// Получаем чекбокс модального окна
-const discountCheckbox = document.querySelector('.modal__form-checkbox-input');
-// Получаем modalInput
-const discountInput = document.querySelector('.modal__form-input-small');
+const toggleCheckbox = () => {
+  // Навешиваем событие на изменение состояния чекбокса
+  discountCheckbox.addEventListener('change', () => {
+    // Условие, при котором чекбокс "выбран"
+    if (discountCheckbox.checked) {
+      // Поле разблокировано
+      discountInput.disabled = false;
+    } else {
+      // Очищаем и блокируем поле
+      discountInput.value = '';
+      discountInput.disabled = true;
+    }
+  });
+};
+toggleCheckbox();
 
-// Навешиваем событие на изменение состояния чекбокса
-discountCheckbox.addEventListener('change', () => {
-  // Условие, при котором чекбокс "выбран"
-  if (discountCheckbox.checked) {
-    // Поле разблокировано
-    discountInput.disabled = false;
-  } else {
-    // Очищаем и блокируем поле
-    discountInput.value = '';
-    discountInput.disabled = true;
-  }
-});
+// Ф-я при помощи делегирования удаляет строкку при нажатии
+// на иконку "удалить"и эл-т из массива
+const delItemTable = () => {
+// Вещшаем обработчик события на tbody
+  tbody.addEventListener('click', e => {
+  // Получаем эл-т на котором произошел клик
+    const target = e.target;
+    // Проверяем, является ли ближайший родительский эл-т с классом 
+    // "cms__table-btn-del" кнопкой удаления товара
+    if (target.closest('.cms__table-btn-del')) {
+    // В переменную получаем строку таблицы
+      const tr = target.closest('.cms__tr');
+      // Получаем содержимое элемента "id" из строки
+      const id = parseInt(tr.querySelector('.cms__table-id').textContent);
+      // Находим индекс объекта в массиве "goods",
+      // у которого значение свойства "id" совпадает с id товара
+      // и удаляем этот объект из массива с помощью метода "splice"
+      goods.splice(goods.findIndex((item) => item.id === id), 1);
+      // Удаляем строку таблицы из DOM
+      tr.remove();
+      // Выводим в консоль получившийся массив после удаления строк
+      console.log(goods);
+      // Обновляем итоговую стоимость товаров в таблице после удаления элемента
+      updateResultSum();
+    }
+  });
+};
+delItemTable();
+
 
 export default {
   addItemGoods,
@@ -130,4 +138,5 @@ export default {
   tbody,
   discountCheckbox,
   discountInput,
+  delItemTable,
 };

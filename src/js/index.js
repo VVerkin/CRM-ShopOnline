@@ -13,12 +13,12 @@ const {
 const {
   modalControl,
   formControl,
-  tbody,
 } = control;
 
 const {
   goodsCount,
   goodsPrice,
+  tbody,
 } = variables;
 
 {

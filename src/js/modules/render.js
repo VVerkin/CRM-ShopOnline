@@ -1,9 +1,7 @@
 import {createRow} from './createElements.js ';
-import control from './control.js';
+import variables from './variables.js';
 
-const {
-  tbody,
-} = control;
+const {tbody} = variables;
 
 export const renderGoods = (arr) => {
   // Создаем элементы перебирая массив с объектами

@@ -2,13 +2,11 @@ import {goods} from './modules/goods.js';
 import {renderGoods} from './modules/render.js';
 import calculation from './modules/calculation.js';
 import control from './modules/control.js';
-
+import variables from './modules/variables.js';
 
 const {
   updateResultSum,
   modalGoodsSum,
-  goodsCount,
-  goodsPrice,
 } = calculation;
 
 
@@ -17,6 +15,11 @@ const {
   formControl,
   tbody,
 } = control;
+
+const {
+  goodsCount,
+  goodsPrice,
+} = variables;
 
 {
 // Ф-я, которая инициализирует наше приложение

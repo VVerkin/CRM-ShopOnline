@@ -1,4 +1,7 @@
 import {goods} from './goods.js';
+import variables from './variables.js';
+
+const {goodsCount, goodsPrice, goodsSum} = variables;
 
 // Ф-я обновляет итоговую стоимость товаров в таблице
 const updateResultSum = () => {
@@ -7,9 +10,7 @@ const updateResultSum = () => {
     acc + item.price * item.count, 0)}`;
 };
 
-const goodsCount = document.querySelector('.modal__form-count .modal__form-input');
-const goodsPrice = document.querySelector('.modal__form-price .modal__form-input');
-const goodsSum = document.querySelector('.modal__goods-value');
+
 // Ф-я расчитывает итоговую стоимость товаров при заполнении количества и цены в модальное окно
 const modalGoodsSum = () => {
   goodsSum.textContent = `$${goodsCount.value * goodsPrice.value}`;
@@ -18,7 +19,4 @@ const modalGoodsSum = () => {
 export default {
   updateResultSum,
   modalGoodsSum,
-  goodsCount,
-  goodsPrice,
-  goodsSum,
 };

@@ -1,8 +1,9 @@
 import {goods} from './modules/goods.js';
+import variables from './modules/variables.js';
 import {renderGoods} from './modules/render.js';
 import calculation from './modules/calculation.js';
 import control from './modules/control.js';
-import variables from './modules/variables.js';
+
 
 const {
   updateResultSum,
@@ -13,12 +14,14 @@ const {
 const {
   modalControl,
   formControl,
+  delItemTable,
+  toggleCheckbox,
 } = control;
 
 const {
+  tbody,
   goodsCount,
   goodsPrice,
-  tbody,
 } = variables;
 
 {
@@ -28,6 +31,8 @@ const {
     updateResultSum();
     const {closeModal} = modalControl();
     formControl(tbody, closeModal);
+    delItemTable();
+    toggleCheckbox();
     modalGoodsSum();
     goodsCount.addEventListener('input', modalGoodsSum);
     goodsPrice.addEventListener('input', modalGoodsSum);

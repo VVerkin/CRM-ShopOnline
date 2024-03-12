@@ -5,6 +5,7 @@ import variables from './variables.js';
 
 const {
   tbody,
+  form,
   discountCheckbox,
   discountInput,
 } = variables;
@@ -58,7 +59,6 @@ const addItemTable = (item, tbody) => {
 
 const formControl = (tbody, closeModal) => {
   // Получаем форму
-  const form = document.querySelector('.modal__form');
   form.addEventListener('submit', e => {
     // Убираем стандартное поведение формы
     e.preventDefault();
@@ -98,7 +98,6 @@ const toggleCheckbox = () => {
     }
   });
 };
-toggleCheckbox();
 
 // Ф-я при помощи делегирования удаляет строкку при нажатии
 // на иконку "удалить"и эл-т из массива
@@ -127,7 +126,6 @@ const delItemTable = () => {
     }
   });
 };
-delItemTable();
 
 
 export default {
@@ -135,8 +133,6 @@ export default {
   modalControl,
   addItemTable,
   formControl,
-  tbody,
-  discountCheckbox,
-  discountInput,
   delItemTable,
+  toggleCheckbox,
 };

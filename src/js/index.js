@@ -1,23 +1,38 @@
-'use strict'
+import {goods} from './modules/goods.js';
+import {renderGoods} from './modules/render.js';
+import calculation from './modules/calculation.js';
+import control from './modules/control.js';
+import variables from './modules/variables.js';
 
-// Заголовок модального окна
-const modalTitle = document.querySelector('.modal__title');
-console.log(modalTitle);
+const {
+  updateResultSum,
+  modalGoodsSum,
+} = calculation;
 
-// Кнопка возле id и сам id
-const goodsId = document.querySelector('.modal__id-value');
-const editGoodsIdBtn = document.querySelector('.madal__id-btn');
-console.log(goodsId, editGoodsIdBtn);
 
-// Форма
-const form = document.querySelector('.modal__form');
-console.log(form);
+const {
+  modalControl,
+  formControl,
+} = control;
 
-// Чекбокс и  Поле рядом с чекбоксом
-const discountCheckbox = document.querySelector('.modal__form-checkbox-input');
-const discountInput = document.querySelector('.modal__form-input-small');
-console.log(discountCheckbox, discountInput );
+const {
+  goodsCount,
+  goodsPrice,
+  tbody,
+} = variables;
 
-// Итоговая стоимость
-const resultCoast = document.querySelector('.modal__goods-value');
-console.log(resultCoast);
+{
+// Ф-я, которая инициализирует наше приложение
+  const init = () => {
+    renderGoods(goods);
+    updateResultSum();
+    const {closeModal} = modalControl();
+    formControl(tbody, closeModal);
+    modalGoodsSum();
+    goodsCount.addEventListener('input', modalGoodsSum);
+    goodsPrice.addEventListener('input', modalGoodsSum);
+  };
+
+  init();
+};
+

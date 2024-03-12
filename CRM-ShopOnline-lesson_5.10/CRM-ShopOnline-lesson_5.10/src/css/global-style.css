@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+  position: relative;
+
+  /* Плавная прокрутка */
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: var(--purple-gray-color);
+}
+
+section {
+  margin: 0 auto;
+  background-color: var(--smoky-white-color);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+fieldset,
+blockquote {
+  margin: 0;
+}
+
+figure {
+  position: relative;
+}
+
+iframe {
+  border: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
+input {
+  padding-left: 10px;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}

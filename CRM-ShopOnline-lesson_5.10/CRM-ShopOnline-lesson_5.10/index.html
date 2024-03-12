@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./src/img/favicon/Shop_Online_favicon.png"
+    />
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link
+      rel="preload"
+      href="src/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="src/fonts/Inter-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="src/fonts/Inter-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="src/fonts/Inter-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>CRM-ShopOnline</title>
+    <script type="module" src="src/js/index.js"></script>
+  </head>
+
+  <body>
+    <section class="cms">
+      <div class="container cms__container">
+        <div class="cms__header">
+          <div class="cms__header-title">cms</div>
+          <div class="cms__header-result">
+            <div class="cms__result-text">Итоговая стоимость:</div>
+            <div class="cms__result-value"></div>
+          </div>
+        </div>
+        <div class="cms__wrapper">
+          <div class="cms__subheader">
+            <div class="cms__subheader-setting">
+              <button class="cms__subheader-filter-btn">
+                <div class="cms__subheader-filter-img">
+                  <img src="./src/img/icons/filter.svg" alt="Иконка фильтра" />
+                </div>
+                <div class="cms__subheader-filter-text">Фильтр</div>
+              </button>
+              <div class="cms__subheader-search">
+                <button
+                  class="cms__subheader-search-btn"
+                  id="search-btn"
+                  name="search-btn"
+                  type="search"
+                >
+                  <img
+                    class="cms__subheader-search-icon"
+                    src="./src/img/icons/search.svg"
+                    alt="Лупа"
+                  />
+                </button>
+
+                <input
+                  class="cms__subheader-search-input"
+                  type="search"
+                  name="search"
+                  placeholder="Поиск по наименованию и категории"
+                />
+              </div>
+            </div>
+            <button class="cms__subheader-add-goods" type="button">
+              Добавить товар
+            </button>
+          </div>
+          <div class="cms__table-wrapper">
+            <table class="cms__table">
+              <thead class="cms__table-head">
+                <tr>
+                  <th class="cms__table-head-id">ID</th>
+                  <th class="cms__table-head-name">Наименование</th>
+                  <th class="cms__table-head-category">Категория</th>
+                  <th class="cms__table-head-units">ед/изм</th>
+                  <th class="cms__table-head-count">количество</th>
+                  <th class="cms__table-head-price">цена</th>
+                  <th class="cms__table-head-result">ИТОГ</th>
+                  <th class="cms__table-head-btn"></th>
+                </tr>
+              </thead>
+              <tbody class="cms__table-body">
+              </tbody>
+            </table>
+            <div class="cms__table-footer">
+              <div class="cms__footer-show-raw">
+                <label class="show-raw-label" for="show-raw"
+                  >Показывать на странице:</label
+                >
+                <select class="show-raw-select" id="show-raw" name="show-raw">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+              <div class="selected-raws">
+                <div class="selected-raws-value">1-10 of 276</div>
+              </div>
+              <div class="navigations-btn">
+                <button class="navigations-btn-left">
+                  <img src="./src/img/icons/btn-left.svg" alt="" />
+                </button>
+                <button class="navigations-btn-right">
+                  <img src="./src/img/icons/btn-right.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <button type="button" class="modal__btn-close"></button>
+        <div class="container modal__container">
+          <div class="modal__header">
+            <div class="modal__title">Добавить товар</div>
+              <div class="modal__id">
+                <div class="modal__id-name">id:</div>
+                <div class="modal__id-value">201910241</div>
+                <button class="madal__id-btn">
+                  <img src="./src/img/icons/edit.svg" alt="" />
+                </button>
+              </div>
+          </div>
+          <form
+            class="modal__form"
+            id="modal-form"
+            action="https://jsonplaceholder.typicode.com/posts"
+            method="post"
+            target="_blank"
+          >
+            <fieldset class="modal__form-fieldset">
+              <div class="modal__form-container">
+                <div class="modal__form-name">
+                  <label for="name" class="modal__form-label"
+                    >Наименование</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="name"
+                    id="name"
+                    required 
+                  />
+                </div>
+
+                <div class="modal__form-description">
+                  <label for="description" class="modal__form-label"
+                    >Описание</label
+                  >
+                  <textarea
+                    class="modal__form-textarea"
+                    name="description"
+                    id="description"
+                    required 
+                  ></textarea>
+                </div>
+
+                <div class="modal__form-category">
+                  <label for="category" class="modal__form-label"
+                    >Категория</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="category"
+                    id="category"
+                    required
+                  />
+                </div>
+
+                <div class="modal__form-units">
+                  <label for="units" class="modal__form-label"
+                    >Единицы измерения</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="units"
+                    id="units"
+                    required
+                  />
+                </div>
+
+                <div class="modal__form-count">
+                  <label for="count" class="modal__form-label"
+                    >Количество</label
+                  >
+                  <input
+                    class="modal__form-input"
+                    type="number"
+                    name="count"
+                    id="count"
+                    required
+                  />
+                </div>
+
+                <div class="modal__form-discount">
+                  <label for="add-discount" class="modal__form-checkbox"
+                    >Дисконт</label
+                  >
+                  <input
+                    class="modal__form-checkbox-input"
+                    type="checkbox"
+                    name="discount"
+                    aria-label="Получить скидку"
+                  />
+                  <input
+                    class="modal__form-input-small"
+                    type="text"
+                    name="discount-text"
+                    id="add-discount"
+                    disabled
+                  />
+                </div>
+
+                <div class="modal__form-price">
+                  <label for="price" class="modal__form-label">Цена</label>
+                  <input
+                    class="modal__form-input"
+                    type="number"
+                    name="price"
+                    id="price"
+                    required
+                  />
+                </div>
+
+                <!-- <div class="modal__form-add-img"> -->
+                <div class="modal__form-file-info">
+                  Изображение не должно превышать размер 1 Мб
+                </div>
+
+                <div class="modal__form-file-wrapper">
+                  <label class="modal__form-file-label">
+                    <input
+                      class="modal__form-file-input"
+                      form="modal-form"
+                      type="file"
+                      accept="image/*"
+                    />Добавить изображение
+                  </label>
+                </div>
+              </div>
+              <!-- </div> -->
+            </fieldset>
+          </form>
+
+          <div class="modal__goods">
+            <div class="modal__goods-cost">
+              <div class="modal__goods-text">Итоговая стоимость:</div>
+              <div class="modal__goods-value"></div>
+            </div>
+
+            <button
+              class="modal__btn-add-goods"
+              form="modal-form"
+              type="submit"
+            >
+              Добавить товар
+            </button>
+          </div>
+
+          <div class="modal__error">
+            <button type="button" class="modal__error-btn-close"></button>
+            <div class="modal__error-message">
+              <img
+                class="modal__error-img"
+                src="./src/img/img/Error.svg"
+                alt=""
+              />
+              <div class="modal__error-text">Что-то пошло не так</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
